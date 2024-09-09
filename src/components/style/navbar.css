@@ -1,0 +1,31 @@
+
+
+
+@media (max-width: 1100px){
+
+    #navbarname{
+        
+        font-size: 12px;
+    }
+
+    #hamburger{
+        display: block;
+    }
+
+    #navbar {
+        display: none;
+    }
+
+    #tabledataclosemedia {
+    
+        display: none;
+    }
+    #theadopen{
+        display: none;
+    }
+}
+#navbarname{
+    font-size: 30px;
+}
+
+

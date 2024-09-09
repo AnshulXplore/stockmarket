@@ -1,0 +1,179 @@
+#buydiv1{
+background-color:#ced4da ;
+width: 80vw;
+position: relative;
+height: 60vh;
+top: 20rem;
+border-radius: 8px;
+overflow: hidden;
+ 
+ 
+
+}
+
+#buymaindiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+        
+}
+
+#buyunidiv{
+    display: flex;
+    justify-content: space-evenly;
+    /* border-radius: 2px solid black; */
+    width: 70vw;
+}
+
+#buydiv3{
+    display: flex;
+    justify-content: space-evenly;
+    width: 70vw;
+}
+
+#buydiv2{
+    display: flex;
+    position: relative;
+    top: 1.6rem;
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+#buyh31{
+position: relative;
+bottom: 1.6rem;
+}
+
+#buyh32{
+    position: relative;
+    bottom: 1.6rem;
+}
+
+#buyh33{
+    /* position: absolute; */
+    top: .8rem;
+    
+    font-size: 2rem;
+}
+
+#buybutton1{
+border: none;
+border-radius: 8px 8px 0px 0px;
+position: relative;
+background-color: white;
+right: .8rem;
+font-weight: bold;
+font-size: 2rem;
+width: 14rem;
+}
+
+
+
+.buy-input-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70vw;
+  }
+  
+  .input {
+    position: relative;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    width: 10vw;
+    /* margin-right: 0; */
+  }
+  
+  
+  
+  #buyinput2 {
+    background-color: white;
+  }
+  
+  
+
+  #buydiv4 {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20vw;
+  }
+  
+  #buyh51, #buyh52, #buyh53 {
+    /* position: relative; */
+    /* left: 1.7rem; */
+    color: #777d87;
+    font-weight: bold;
+  }
+
+  #buydiv6 {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20vw;
+  }
+  
+  #buyh61, #buyh62, #buyh63 {
+    /* position: relative; */
+    font-weight: bold;
+    bottom: 2rem;
+  }
+  
+  #buyh61 {
+    left: 3.5rem;
+  }
+  
+  #buyh62 {
+    left: 7rem;
+  }
+  
+  #buyh63 {
+    left: 9.5rem;
+  }
+  
+  
+  #buybutton1 {
+    /* position: relative; */
+    /* border: none; */
+    background: transparent;
+    /* left: 60rem; */
+    color:  #777d87;
+    font-size: 1.5rem;
+  }
+
+  #buybutton2{
+/* position: relative; */
+border: 2px solid blue;
+background-color: transparent;
+/* left: 60rem; */
+color: blue;
+  }
+
+  #buybtndiv{
+    display: flex;
+    /* border: 1px solid black; */
+    /* justify-content: space-around; */
+    width: 72vw;
+    justify-content: flex-end;
+  }
+
+
+
+  @media (max-width:500px) {
+    .input::placeholder{
+    
+        font-size:4px;
+        z-index: 1000;
+    }
+
+
+    #buyinput2{
+        display: none;
+    }
+
+    .hellog{
+        display: none;
+    }
+  }
+  
+/* div-6  h3-3 */

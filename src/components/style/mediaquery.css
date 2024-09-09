@@ -1,0 +1,334 @@
+/* about css */
+
+#slidingbar{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+
+
+.box {
+    position: absolute;
+    transform: translateX(-100%); /* Initially off-screen to the left */
+    transition: transform 0.5s ease-in-out;
+    
+  }
+  .show{
+    /* transition: transform 0.5s ease-in-out; */
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  
+
+#slidingbar a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: white;
+    font-weight: 600;
+
+}
+.secondnavlink {
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    left: 64px;
+    color: black;
+
+}
+
+#navlink1{
+    background-color: blue;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    width: 20rem;
+    height: 4rem;
+    border-radius: .4rem;
+    border: none;
+}
+
+#navlink2{
+text-align: center;
+color: blue;
+cursor: pointer;
+width: 16rem;
+height: 4rem;
+border-radius: .4rem;
+border: none;
+}
+#navimg1{
+    max-width: 19.2rem;
+}
+#navsearch{
+    width: 40rem;
+    border-radius: .8rem;
+    height: 4rem;
+    text-align: center;
+}
+#navnav1{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    /* height: 5vh; */
+}
+
+.secondnavlink:hover {
+    color: blue;
+    /* box-shadow: 0 8px 24px 0 rgba(16,39,112,.2); */
+    text-decoration: underline;
+}
+
+#secondnavnav {
+    display: flex;
+    height: 5rem;
+    align-items: center;
+    background-color: #21b7a8;
+}
+
+
+
+@media (max-width: 1100px) {
+   
+
+    #secondnavnav {
+        display: flex;
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
+        transition: all 0.5s ease-in-out;
+        display: none;
+        gap: 20px;
+    }
+    #hamcrossdiv{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .secondnavlink {
+        text-decoration: none;
+        font-size: 1.8rem;
+        position: relative;
+        left: 0;
+        color: rgb(255, 255, 255);
+    }
+
+    #abouttable{
+        width: 100vw;
+    }
+}
+
+
+
+@media (max-width: 1100px) {
+   
+    .secondnavlink{
+        font-size: 1rem;
+    }
+
+    #navlink1{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .port{
+        font-size: 1.5rem;
+    }
+
+
+}
+
+@media (max-width: 675px) {
+   
+    .secondnavlink{
+        font-size: 0.8rem;
+        /* padding: 2px 2px; */
+    }
+    #navlink1{
+        display: none;
+    }
+    #navlink2{
+        display: none;
+    }
+
+    #navimg1{
+        display: none;
+    }
+
+    #navlink1{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* min-width: .5rem; */
+    }
+    #nav{
+        width: 100vw;
+       font-size: .5rem;
+       
+    }
+    #secondnav{
+        width: 100vw;
+    }
+    #aboutdiv1{
+        width: 100vw;
+    }
+    #navnav1{
+        width: 100vw;
+
+    }
+
+    #navsearch{
+        width: 30rem;
+    }
+    .port{
+        font-size: 1.5rem;
+    }
+
+
+}
+
+#latna{
+    display: none;
+}
+
+@media (max-width: 575px) {
+.secondnavlink2{
+    display: block;
+}
+
+#latna{
+    color: white;
+    display: block;
+    position: relative;
+    top: 2.2rem;
+
+    /* margin-right:4px ; */
+}
+
+.signdiv2{
+    position: relative;
+    top: 2rem;
+}
+.navlink3{
+    position: relative;
+    left: 3rem;
+    font-size: 1.3rem;
+}
+
+/* #slidingbar{
+    opacity: 0;
+} */
+
+.none{
+    display: none;
+}
+
+
+}
+
+
+
+
+@media (max-width: 500px) {
+    .secondnavlink{
+        font-size: 0.8rem;
+        flex-wrap: nowrap;
+    }
+
+    .navlink3{
+        font-size: 1.3rem;
+    }
+
+    #abouttable{
+        width: 100vw;
+    }
+}
+
+#aboutdiv1 {
+    max-height: 700px;
+    overflow: auto;
+}
+
+#abouttable {
+    background-color: white;
+    color: white;
+}
+
+.aboutth {
+    font-size: 20px;
+    color: black;
+}
+
+#secondnavnav{
+    display: block;
+    padding: 8px 8px;
+}
+
+@media (max-width: 400px) {
+.secondnavlink{
+    font-size: 0.8rem;
+}
+}
+
+.navlink3{
+    font-size: 1.5rem;
+}
+
+#crosse{
+    display: block;
+}
+/* home css end */
+
+@media (max-width:927px) {
+    .none{
+        display: none;
+    }
+
+    #latna{
+        color: white;
+        display: block;
+        position: relative;
+        top: 2.2rem;
+    }
+
+    .navlink3{
+        position: relative;
+        left: 3rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width:811px) {
+     .none{
+        font-size: 1.5rem;
+     }    
+}
+
+
+
+
+
+
+#secondnav{
+    position: sticky;
+    top: 0;
+    z-index: 500;
+}
+/* order history */
+
+

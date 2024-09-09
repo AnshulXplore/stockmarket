@@ -1,0 +1,32 @@
+/* .button-animation{
+    animation: ani1 0.8s  linear 1;
+    color: white;
+    overflow: hidden;
+    position: fixed;
+    bottom: 126px;
+    display: flex;
+    justify-content: center;
+    width: 19.8%;
+    border-radius:0px 0px 8px 8px;
+    height: 47vh;
+    right: 565px;
+    align-items: center;
+    background: transparent;
+    background-color: transparent;
+
+  }
+  
+  @keyframes ani1{
+    0%{
+      transform: translateY(0);
+      height: 10vh;
+
+    }
+
+    100%{
+      transform: translateY(200);
+      height: 47vh;
+
+    }
+  }
+   */

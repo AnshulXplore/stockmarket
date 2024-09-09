@@ -1,0 +1,200 @@
+.sharediv1{
+    position: relative;
+    z-index: 1000;
+}
+
+#sharediv3{
+position: relative;
+left: 2rem;
+border: .2rem solid black;
+top: .8rem;
+overflow-x: hidden;
+height: 100vh;
+overflow-y:hidden ;
+width: 95vw;
+}
+
+#sharediv4{
+    display: flex;
+}
+.sharelink1{
+text-decoration: none;
+color: #3f5bd9;
+font-size: 1.5rem;
+}
+
+#sharep1{
+    color: #777d87;
+    font-size: 1.5rem;
+}
+#sharediv5{
+    display: flex;
+}
+
+#shareh11{
+font-size: 2.6rem;
+font-weight: 600;
+line-height: 3.4rem;
+bottom: 0rem;
+}
+
+#sharebutton1{
+border-radius: .8rem;
+height: 3rem;
+width: 5.5rem;
+background-color:#777d87 ;
+color: white;
+box-shadow: inset 0 0 0 1px #777d87;
+}
+
+
+#shareh51{
+position: relative;
+bottom: .4rem;
+color: #2a394e;
+}
+#shareh52{
+color: #777d87;
+position: relative;
+bottom: .6rem;
+}
+
+#sharediv6{
+display: flex;
+}
+
+#sharebutton2{
+color: white;
+background-color:rgb(10 211 46) ;
+width: 7rem;
+height: 3.2rem;
+border-radius: .8rem;
+opacity: 1;
+}
+
+#sharebutton3{
+    color: white;
+    background-color: green;
+    width: 7rem;
+    height: 3.2rem;
+    border-radius: .8rem;
+}
+
+
+#sharediv7{
+background-color: rgba(255,174,17,.2);
+display: flex;
+width: 100vw;
+height: 3rem;
+flex-wrap: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+#sharep12{
+color: #2a394e;
+font-weight: 600;
+}
+
+#sharediv8{
+display: flex;
+}
+#sharep13{
+    height: 1rem;
+    width: 50rem;
+    background-color: red;
+    border-radius: .8rem;
+}
+
+#sharediv9{
+    display: flex;
+    flex-direction: row;
+}
+
+#sharetable{
+    width: 100vw;
+}
+.sharetd{
+font-weight: bold;
+color: #777d87;
+}
+#sharetable2{
+    width: 100vw;
+}
+
+#sharetd2{
+position: absolute;
+left: 23rem;
+}
+
+#sharetd3{
+    position: absolute;
+left: 23rem;
+}
+
+#sharetd4{
+    position: absolute;
+    left: 23rem;
+}
+
+#sharetd5{
+    position: absolute;
+    left: 65rem;
+}
+
+
+#sharetd6{
+    position: absolute;
+    left: 65rem;
+}
+
+#sharetd7{
+    position: absolute;
+    left: 65rem;
+}
+
+#shareunique{
+    font-size: 1.5rem;
+}
+
+@media (max-width:846px) {
+
+    #sharetable{
+        width: 25vw;
+    }
+
+    #sharetable2{
+        width: 25vw;
+        display: none;
+    }
+    
+}
+
+@media (max-width:564px) {
+#sharediv3{
+   margin-right: 16px;
+   margin-left: -11px;
+}
+
+#shareunique{
+    font-size: 1.3rem;
+}
+#shareunique2{
+    font-size: 1.3rem;
+}
+   
+}
+
+@media (max-width:476px) {
+    /* #sharediv7{
+       
+
+    } */
+
+    #sharep12{
+        margin-left: -11px;
+    }
+}
+
+
+
+/* div-9  h5-3 button-3 h1-1 .link-1 p1-3  */

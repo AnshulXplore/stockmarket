@@ -1,0 +1,158 @@
+import React, { createContext, Component,useState } from 'react';
+import Navbar from './navbar';
+import Second from './secondnav'
+import Buy from './buy'
+import { componentDidMount } from './about';
+import { Link } from 'react-router-dom';
+let shareName=null;
+export const ResponseContext = createContext();
+const Seprateshare= ({name,fullName,setContext})=>{
+
+  const [Isopen, setIsOpen] = useState(false);
+  const [Action, setAction] = useState('BUY');
+  const [myArray, setMyArray] = useState([]);
+
+
+  const handleOnCLick=()=>{
+    setIsOpen(true)
+    console.log('hello i clicked');
+  }
+
+  const handle=()=>{
+    setIsOpen(false)
+    setAction('BUY');
+  }
+
+  const sellhandle=()=>{
+    setIsOpen(true)
+    setAction('SELL');
+
+  }
+  
+  async function componentDidMount(){
+   let shareData=await componentDidMount(shareName);
+   let data=[shareData];
+   setMyArray([...myArray, data]);
+   this.setState({name:this.props.name});
+   console.log('nhpc state'+this.state.name)
+  }
+
+  // componentDidMount();
+
+    let normal={backgroundColor:'#fff',height:'30px',width:'40px',border:'1px solid #e0e0ec',borderRadius:'4px',alignContent:'center',transition:'all .25s ease-in-out',cursor:'pointer'}
+    let hover={
+      border:'1px solid blue'
+    }
+    const handleMouseEnter = (e) => {
+      const mergedStyle = { ...normal, ...hover };
+      Object.assign(e.target.style, mergedStyle);
+    };
+    
+    const handleMouseLeave = (e) => {
+      Object.assign(e.target.style, normal);
+    };
+    
+    
+    shareName=name;
+
+    
+    return (
+      <>
+     {Isopen===true && Action==='BUY' ? <div style={{position:'relative',top:'',height:'',zIndex:'1000',backgroundColor:''}}>{Isopen===true ? <Buy price={'40'}  Action={Action}  setContext={setContext}/> : null}</div> : <div style={{position:'relative',top:'',height:'',zIndex:'1000',backgroundColor:''}}>{Isopen===true ? <Buy price={'50'} Action={Action}/> : null}</div>}
+
+     {/* style={{position:'relative',bottom:this.state.isopen===true ? '400px' : '0px', overflowX: 'hidden', opacity: this.state.isopen === true ? '0.5' : '1',pointerEvents:this.state.isopen===true ? 'auto': 'auto'}} */}
+      
+
+      <div>
+        <Navbar/>
+        <Second home={"HOME"}/>
+        <div style={{position:'relative',left:'20px',border:'2px solid black',top:'8px', overflowX:'hidden'}}>
+          <div style={{display:'flex'}}>
+            <Link to='/' className='mx-3 my-2' style={{textDecoration:'none',color:'#3f5bd9',fontSize:'15px'}}>Home</Link>
+            <Link to="/" className='mx-3 my-2' style={{textDecoration:'none',color:'#3f5bd9',fontSize:'15px'}}>All Stocks</Link>
+            <p className='mx-3 my-2' style={{fontSize:'15px',color:'#777d87'}}>{name}</p>
+          </div>
+         <div  style={{display:'flex'}}>
+          <h1 className='mx-3' style={{fontSize:'26px',fontWeight:'600',lineHeight:'34px',bottom:'0px'}}>{name} Share Price Live</h1>
+          <button className='my-1' style={{borderRadius:'8px',height:'30px',width:'55px',backgroundColor:'#777d87',color:'white',boxShadow:'inset 0 0 0 1px #777d87'}}>NSE</button>
+          <span className='mx-3' style={normal} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+
+          <svg className='my-2 mx-2' width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.2 11.4C12.7509 11.4023 12.308 11.5054 11.9041 11.7016C11.5001 11.8979 11.1454 12.1824 10.866 12.534L6.48001 9.79205C6.63986 9.27615 6.63986 8.72395 6.48001 8.20805L10.866 5.46605C11.3112 6.01728 11.9371 6.39316 12.6328 6.52709C13.3286 6.66103 14.0493 6.54439 14.6673 6.19782C15.2853 5.85126 15.7607 5.29715 16.0093 4.63364C16.2579 3.97013 16.2636 3.24006 16.0254 2.57275C15.7872 1.90544 15.3205 1.34396 14.708 0.987787C14.0955 0.63161 13.3767 0.503719 12.6789 0.626771C11.9812 0.749823 11.3495 1.11587 10.8957 1.66008C10.442 2.20429 10.1956 2.89152 10.2 3.60005C10.2028 3.86836 10.2432 4.13495 10.32 4.39205L5.93401 7.13405C5.5468 6.6466 5.01754 6.29168 4.41958 6.11849C3.82163 5.94529 3.18461 5.96241 2.59682 6.16746C2.00903 6.37251 1.49959 6.75533 1.1391 7.26287C0.778624 7.77041 0.584961 8.37752 0.584961 9.00005C0.584961 9.62258 0.778624 10.2297 1.1391 10.7372C1.49959 11.2448 2.00903 11.6276 2.59682 11.8326C3.18461 12.0377 3.82163 12.0548 4.41958 11.8816C5.01754 11.7084 5.5468 11.3535 5.93401 10.866L10.32 13.6081C10.2432 13.8652 10.2028 14.1317 10.2 14.4001C10.2 14.9934 10.376 15.5734 10.7056 16.0668C11.0352 16.5601 11.5038 16.9446 12.052 17.1717C12.6001 17.3988 13.2033 17.4582 13.7853 17.3424C14.3672 17.2267 14.9018 16.9409 15.3213 16.5214C15.7409 16.1018 16.0266 15.5673 16.1424 14.9853C16.2581 14.4034 16.1987 13.8002 15.9717 13.252C15.7446 12.7038 15.3601 12.2353 14.8667 11.9056C14.3734 11.576 13.7934 11.4 13.2 11.4ZM13.2 1.80005C13.556 1.80005 13.904 1.90562 14.2 2.1034C14.496 2.30119 14.7268 2.58231 14.863 2.91122C14.9992 3.24013 15.0349 3.60205 14.9654 3.95121C14.896 4.30038 14.7245 4.62111 14.4728 4.87284C14.2211 5.12458 13.9003 5.29601 13.5512 5.36546C13.202 5.43492 12.8401 5.39927 12.5112 5.26303C12.1823 5.12679 11.9012 4.89608 11.7034 4.60008C11.5056 4.30407 11.4 3.95606 11.4 3.60005C11.4 3.12266 11.5897 2.66482 11.9272 2.32726C12.2648 1.98969 12.7226 1.80005 13.2 1.80005ZM3.60001 10.8C3.24401 10.8 2.89599 10.6945 2.59999 10.4967C2.30398 10.2989 2.07327 10.0178 1.93703 9.68888C1.80079 9.35997 1.76515 8.99805 1.8346 8.64889C1.90405 8.29972 2.07549 7.97899 2.32722 7.72726C2.57896 7.47552 2.89968 7.30409 3.24885 7.23464C3.59802 7.16518 3.95994 7.20083 4.28884 7.33707C4.61775 7.4733 4.89887 7.70401 5.09666 8.00002C5.29445 8.29603 5.40001 8.64404 5.40001 9.00005C5.40001 9.47744 5.21037 9.93528 4.87281 10.2728C4.53524 10.6104 4.0774 10.8 3.60001 10.8ZM13.2 16.2C12.844 16.2 12.496 16.0945 12.2 15.8967C11.904 15.6989 11.6733 15.4178 11.537 15.0889C11.4008 14.76 11.3651 14.3981 11.4346 14.0489C11.5041 13.6997 11.6755 13.379 11.9272 13.1273C12.179 12.8755 12.4997 12.7041 12.8489 12.6346C13.198 12.5652 13.5599 12.6008 13.8888 12.7371C14.2178 12.8733 14.4989 13.104 14.6967 13.4C14.8944 13.696 15 14.044 15 14.4001C15 14.8774 14.8104 15.3353 14.4728 15.6728C14.1352 16.0104 13.6774 16.2 13.2 16.2Z" fill="currentColor"></path>
+            </svg>
+          </span>
+         </div>
+         <h5 className='mx-3' style={{position:'relative',bottom:'4px',color:'#2a394e'}}>{name}</h5>
+         <h5 className='mx-3 ' style={{color:'#777d87',position:'relative',bottom:'6px'}}>Large Cap  |  IT - Software</h5>
+         <div className='mx-3' style={{display:'flex'}}> 
+          {/* <h3>₹{arr[0][3]}</h3> */}
+          <button className='mx-3' style={{color:'white',backgroundColor:'#62a16d',width:'80px',height:'35px',borderRadius:'8px'}} onClick={handleOnCLick}>BUY</button> 
+          <button className='' style={{color:'white',backgroundColor:'green',width:'80px',height:'35px',borderRadius:'8px'}} onClick={sellhandle}>SELL</button> 
+         </div>
+         <div className='mx-3 my-2' style={{backgroundColor:'rgba(255,174,17,.2)',display:'flex',width:'500px',height:'30px'}}>
+          <p className='mx-3 my-1' style={{color:'#2a394e',fontWeight:'600'}}>Price as of 30 Apr 2024 15:14 .  <Link to="/" style={{textDecoration:'none'}}>Log in</Link> to view Live prices</p> 
+         </div>
+         <h2 className='mx-3 my-1'>{fullName} Performance</h2>
+         <h5 className='mx-3 my-4' style={{color:'#777d87'}}>Days Range</h5>
+         <div className='mx-3 my-2' style={{display:'flex'}}>
+          {/* <p style={{color:'#2a394e',fontWeight:'bold',position:'relative',left:'16px'}}>Low: ₹{arr[0][2]}</p> */}
+          <svg className='' style={{position:'relative',left:'19px'}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#f20a3c" fill="none">
+    <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+          <p className='my-3 mx-1' style={{height:'10px',width:'500px',backgroundColor:'red',borderRadius:'8px'}}></p>
+          {/* <p style={{color:'#2a394e',fontWeight:'bold'}}>High: {arr[0][1]}</p> */}
+         </div>
+         <div style={{}}>
+         <div className='mx-3' style={{ display: 'flex', flexDirection: 'row' }}>
+  <table className='table' style={{ width: '25%',backgroundColor:'#e0e0ec' }}>
+    <tbody>
+      <tr>
+        <td style={{ color: '#777d87', fontWeight: 'bold' }}>Open</td>
+        {/* <td style={{ fontWeight: 'bold', color: 'black',position:'absolute',left:'280px'}}>{arr[0][0]}</td> */}
+      </tr>
+      <tr>
+        <td style={{ color: '#777d87', fontWeight: 'bold' }}>Close</td>
+        {/* <td style={{ fontWeight: 'bold', color: 'black',position:'absolute',left:'280px' }}>{arr[0][3]}</td> */}
+      </tr>
+      <tr>
+        <td style={{ color: '#777d87', fontWeight: 'bold' }}>Volume</td>
+        {/* <td style={{ fontWeight: 'bold', color: 'black',position:'absolute',left:'270px' }}>{arr[0][4]}</td> */}
+      </tr>
+    </tbody>
+  </table>
+  <table className='table mx-3' style={{ width: '25%',backgroundColor:'#e0e0ec'}}>
+    <tbody>
+      <tr>
+        <td style={{ color: '#777d87', fontWeight: 'bold' }}>Low</td>
+        {/* <td style={{ fontWeight: 'bold', color: 'black' ,position:'absolute',left:'650px'}}>{arr[0][2]}</td> */}
+      </tr>
+      <tr>
+        <td style={{ color: '#777d87', fontWeight: 'bold' }}>High</td>
+        {/* <td style={{ fontWeight: 'bold', color: 'black',position:'absolute',left:'650px'}}>{arr[0][1]}</td> */}
+      </tr>
+      <tr>
+        <td style={{ color: '#777d87', fontWeight: 'bold' }}>Volume</td>
+          <td style={{ fontWeight: 'bold', color: 'black', position:'absolute',left:'625px'}}>1725274</td>
+      </tr>
+        </tbody>
+      </table>
+    </div>
+       
+  </div>
+        </div>
+  
+        {/* <Order/> */}
+      {/* <Order /> */}
+      {/* <Orderhistory ref={this.orderhis}/> */}
+         
+
+      </div>
+      
+
+      </>
+
+    )
+  }
+  
+
+export default Seprateshare;

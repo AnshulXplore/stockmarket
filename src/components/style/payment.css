@@ -1,0 +1,222 @@
+
+.containerr {
+    margin: 0rem auto;
+    width: 80rem;
+    padding: 3rem;
+    position: relative;
+    top:6rem;
+}
+
+.card.box1 {
+    width: 35rem;
+    height: 50rem;
+    background-color: #121f17;
+    color: #baf0c3;
+    border-radius: 0;
+    font-weight: bold;
+}
+
+.card.box2 {
+    width: 45rem;
+    height: 58rem;
+    background-color: #d9e827;
+    border-radius: 0
+}
+
+.text {
+    font-size: 1rem
+}
+
+.box2 .btn.btn-primary.bar {
+    width: 2rem;
+    background-color: transparent;
+    border: none;
+    color: #3ecc6d
+}
+
+.box2 .btn.btn-primary.bar:hover {
+    color: #baf0c3
+}
+
+.box1 .btn.btn-primary {
+    background-color: #57c97d;
+    width: 4.5rem;
+    height: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1rem solid #ddd
+}
+
+.box1 .btn.btn-primary:hover {
+    background-color: rgb(3 15 21);
+    color: #57c97d
+}
+
+.btn.btn-success {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: #ddd;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none
+}
+
+.nav.nav-tabs {
+    border: none;
+    border-bottom: .2rem solid #ddd
+}
+
+.nav.nav-tabs .nav-item .nav-link {
+    border: none;
+    color: #f2e5e5;
+
+    border-bottom: .2rem solid transparent;
+    font-size: 1.4rem
+}
+
+.nav.nav-tabs .nav-item .nav-link:hover {
+    border-bottom: .2rem solid #3ecc6d;
+    color: #05cf48
+}
+
+.nav.nav-tabs .nav-item .nav-link.active {
+    border: none;
+    border-bottom: .2rem solid #3ecc6d
+}
+
+.form-control {
+    border: none;
+    border-bottom: 1.rem solid #ddd;
+    box-shadow: none;
+    height: 2rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    padding: 1.5rem 0rem;
+    letter-spacing: .5rem;
+    border-radius: 0
+}
+
+.inputWithIcon {
+    position: relative
+}
+
+.paymentimg {
+    width: 5rem;
+    height: 2rem;
+    object-fit: cover
+}
+
+.inputWithIcon span {
+    position: absolute;
+    right: 0rem;
+    bottom: .9rem;
+    color: #57c97d;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1.4rem
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-bottom: .1rem solid #ddd
+}
+
+.btn-outline-primary {
+    color: black;
+    background-color: #ddd;
+    border: .1rem solid #ddd
+}
+
+.btn-outline-primary:hover {
+    background-color: #05cf48;
+    border: .1rem solid #ddd
+}
+
+.btn-check:active+.btn-outline-primary,
+.btn-check:checked+.btn-outline-primary,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show,
+.btn-outline-primary:active {
+    color: #baf0c3;
+    background-color: #3ecc6d;
+    box-shadow: none;
+    border: .1rem solid #ddd
+}
+
+.btn-group>.btn-group:not(:last-child)>.btn,
+.btn-group>.btn:not(:last-child):not(.dropdown-toggle),
+.btn-group>.btn-group:not(:first-child)>.btn,
+.btn-group>.btn:nth-child(n+3),
+.btn-group>:not(.btn-check)+.btn {
+    border-radius: 5rem;
+    margin-right: 2rem
+}
+
+form {
+    font-size: 1.4rem
+}
+
+form .btn.btn-primary {
+    width: 100%;
+    height: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3ecc6d;
+    border: .1rem solid #ddd
+}
+
+form .btn.btn-primary:hover {
+    background-color: #05cf48
+}
+.paymentdiv{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #181b24;
+}
+@media (max-width:689px) {
+    .paymentdiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 200vh;
+    
+    }
+}
+
+
+@media (max-width:500px) {
+    .card.box2{
+        width: 37rem;
+    }
+}
+
+@media (max-width:405px) {
+    .card.box2{
+        width: 33rem;
+    }
+    .card.box1{
+        width:29rem ;
+    }
+    .paymentdiv{
+        width: 100vw;
+    }
+    
+}
+
+
+
+/* order css */
+
+
+
+
