@@ -42,8 +42,9 @@ if(props.Action==='BUY'){
     const addstock=await fetch('https://stockmarketbackend-3.onrender.com/userdetail/addstock',{
       method:'POST',
       headers:{ 'Content-Type': 'application/json','auth-token':a.jwtToken},
-      body:JSON.stringify({shareName:props.name,buyPrice:40,action:props.Action,shareNumber:input,amount:input4})
+      body:JSON.stringify({shareName:props.name,buyPrice:props.currentPrice ? Math.round(props.currentPrice*100)/100 :100,action:props.Action,shareNumber:input,amount:input4})
   })
+  console.log(props.currentPrice)
 
   const updateamount=await fetch('https://stockmarketbackend-3.onrender.com/payment/updatefund',{
     method:'PUT',
@@ -86,7 +87,7 @@ else{
   const sellStock=await fetch('https://stockmarketbackend-3.onrender.com/userdetail/updatestock',{
     method:'PUT',
     headers:{ 'Content-Type': 'application/json','auth-token':a.jwtToken},
-    body:JSON.stringify({shareName:props.name,buyPrice:40,action:props.Action,shareNumber:input,amount:input4})
+    body:JSON.stringify({shareName:props.name,buyPrice:props.currentPrice ? Math.round(props.currentPrice*100)/100 :100,action:props.Action,shareNumber:input,amount:input4})
 })
 
 

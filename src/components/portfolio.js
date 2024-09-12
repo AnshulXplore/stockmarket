@@ -133,7 +133,7 @@ export default function Portfolio(props) {
                                     <td id='v1' scope="row"> <span className="fa fa-briefcase mr-1"></span> {e.name} </td>
                                     <td id='v2'><span className="fa fa">{e.number}</span></td>
                                     <td id='v3' className="">{e.amount}</td>
-                                    <td id='v4' className="">{ Math.round(a.myobj[e.name]*100)/100}</td>
+                                    <td id='v4' className="">{a.myobj[e.name] ? Math.round(a.myobj[e.name]*100)/100 : 'api limit'}</td>
                                     <td id='v5' className="">{e.average ? e.average.toFixed(2) : e.average}</td>
                                     <td id='v6' style={{color:incomee<0 ? 'red' : 'green'}} className="">{incomee.toFixed(2)}</td>
                                 </tr>

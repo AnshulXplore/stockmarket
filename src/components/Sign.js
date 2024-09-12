@@ -1,5 +1,5 @@
-import React, { useState,useContext, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState,useContext, useEffect, } from 'react'
+import { Link,useNavigate } from 'react-router-dom'
 import './style/sign.css'
 import Alert from './Alert'
 import stockContext from "./stockContext";
@@ -10,6 +10,7 @@ export default function Sign() {
     const [datalogin,setdata]=useState({email:"",password:""})
     const [isAlert,setAlert]=useState(false);
     const[error,seterror]=useState("");
+    const navigate=useNavigate();
 
     useEffect(()=>{
         document.body.style.overflow='auto'
@@ -37,6 +38,7 @@ export default function Sign() {
             console.log("jwt token :-"+typeof(json.user))
             setAlert(true);
             seterror('Login succesfull')
+            navigate('/');
             setTimeout(() => {
                 setAlert(false);
               }, 3000);
