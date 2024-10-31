@@ -85,7 +85,7 @@ const SeprateShare = (props) => {
 
   useEffect(()=>{
     const fetchTotalNumOfShare=async()=>{
-      const data = await fetch('https://stockmarketbackend-3.onrender.com/userdetail/onesharedetail', {
+      const data = await fetch('https://stockmarketbackend-4.onrender.com/userdetail/onesharedetail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'auth-token': a.jwtToken },
         body:JSON.stringify({shareName:props.name})

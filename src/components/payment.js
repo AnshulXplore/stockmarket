@@ -13,32 +13,70 @@ export default function Payment() {
   useEffect(()=>{
     document.body.style.overflow='auto'
   },[])
-const handleclick3=async()=>{
-  const data=await fetch('https://stockmarketbackend-3.onrender.com/payment/addfund',{
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json','auth-token':a.jwtToken},
-    body:JSON.stringify({card,enteramount,paymentmethod:'credit card'})
-})
-// console.log(card)
-// console.log(amount)
-const json = await data.json();
-if(json.error){
-  seterror(json.error[0].msg);
-  setAlert(true)
-  setTimeout(() => {
-    setAlert(false);
-  }, 3000);
-}
+  const handleclick3 = async () => {
+    // Pahle check karein ki Razorpay SDK load hua hai ya nahi
+    if (typeof window.Razorpay === "undefined") {
+        alert("Razorpay SDK is not loaded. Please check your internet connection or script tag.");
+        return;
+    }
 
-else{
-  console.log(json)
-  setAlert(true);
-  seterror('Payment Succesfull Best Luck for Future Trading');
-  setTimeout(() => {
-      setAlert(false);
-    }, 3000);
-}
-}
+    try {
+        // Server se order data fetch kar rahe hain
+        const response = await fetch('http://localhost:5000/create-order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ amount: 500 }) // amount in INR (500 rupees)
+        });
+
+        if (!response.ok) {
+            throw new Error("Order creation failed on the server.");
+        }
+
+        const orderData = await response.json();
+
+        // Razorpay options configure karna
+        const options = {
+            key: 'rzp_live_iUBga0IbSkxXNc', // Aapka Razorpay key_id
+            amount: orderData.amount, // Amount in paisa (multiply rupees by 100)
+            currency: "INR",
+            name: "Anshul Kankane Coder",
+            description: "ProCoder",
+            order_id: orderData.id, // Razorpay order ID from server response
+            handler: async function (response) {
+                // Payment verification ke liye response ko server pe bhejna
+                const verificationResponse = await fetch('http://localhost:5000/payment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(response),
+                });
+
+                const verificationMessage = await verificationResponse.text();
+                alert(verificationMessage);
+            },
+            prefill: {
+                name: "Customer Name",
+                email: "customer@example.com",
+                contact: "9999999999"
+            },
+            theme: {
+                color: "#3399cc"
+            }
+        };
+
+        // Razorpay instance initialize karna aur open function se checkout open karna
+        const paymentObject = new window.Razorpay(options);
+        paymentObject.open();
+    } catch (error) {
+        console.error("Error occurred:", error);
+        alert("Something went wrong. Please try again.");
+    }
+};
+
+
 
   const handleclick1=()=>{
     setamount(prevAmount => prevAmount + 5949);

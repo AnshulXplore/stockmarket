@@ -26,7 +26,7 @@ const Buy = (props) => {
 
   const handle2 = async() => {
 
-    const data = await fetch('https://stockmarketbackend-3.onrender.com/payment/getdetail', {
+    const data = await fetch('https://stockmarketbackend-4.onrender.com/payment/getdetail', {
       method: 'GET',
       headers: { 'Content-Type': 'application/json', 'auth-token': a.jwtToken }
   });
@@ -39,14 +39,14 @@ const Buy = (props) => {
 
 if(props.Action==='BUY'){
     if(response.amount>=input4){
-    const addstock=await fetch('https://stockmarketbackend-3.onrender.com/userdetail/addstock',{
+    const addstock=await fetch('https://stockmarketbackend-4.onrender.com/userdetail/addstock',{
       method:'POST',
       headers:{ 'Content-Type': 'application/json','auth-token':a.jwtToken},
-      body:JSON.stringify({shareName:props.name,buyPrice:props.currentPrice ? Math.round(props.currentPrice*100)/100 :100,action:props.Action,shareNumber:input,amount:input4})
+      body:JSON.stringify({shareName:props.name,buyPrice:props.currentPrice,action:props.Action,shareNumber:input,amount:input4})
   })
   console.log(props.currentPrice)
 
-  const updateamount=await fetch('https://stockmarketbackend-3.onrender.com/payment/updatefund',{
+  const updateamount=await fetch('https://stockmarketbackend-4.onrender.com/payment/updatefund',{
     method:'PUT',
     headers:{ 'Content-Type': 'application/json','auth-token':a.jwtToken},
     body:JSON.stringify({action:props.Action,price:input4})
@@ -84,21 +84,21 @@ else{
   
   }
   else{
-  const sellStock=await fetch('https://stockmarketbackend-3.onrender.com/userdetail/updatestock',{
+  const sellStock=await fetch('https://stockmarketbackend-4.onrender.com/userdetail/updatestock',{
     method:'PUT',
     headers:{ 'Content-Type': 'application/json','auth-token':a.jwtToken},
-    body:JSON.stringify({shareName:props.name,buyPrice:props.currentPrice ? Math.round(props.currentPrice*100)/100 :100,action:props.Action,shareNumber:input,amount:input4})
+    body:JSON.stringify({shareName:props.name,buyPrice:props.currentPrice,action:props.Action,shareNumber:input,amount:input4})
 })
 
 
-const updateamount=await fetch('https://stockmarketbackend-3.onrender.com/payment/updatefund',{
+const updateamount=await fetch('https://stockmarketbackend-4.onrender.com/payment/updatefund',{
   method:'PUT',
   headers:{ 'Content-Type': 'application/json','auth-token':a.jwtToken},
   body:JSON.stringify({action:props.Action,price:input4})
 })
 
 
-  const oneStockTotalNumber = await fetch('https://stockmarketbackend-3.onrender.com/userdetail/onesharedetail', {
+  const oneStockTotalNumber = await fetch('https://stockmarketbackend-4.onrender.com/userdetail/onesharedetail', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'auth-token': a.jwtToken },
     body:JSON.stringify({shareName:props.name})
@@ -142,7 +142,7 @@ console.log('sell'+json)
 
   useEffect(()=>{
     const fetchTotalNumOfShare=async()=>{
-      const data = await fetch('https://stockmarketbackend-3.onrender.com/userdetail/onesharedetail', {
+      const data = await fetch('https://stockmarketbackend-4.onrender.com/userdetail/onesharedetail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'auth-token': a.jwtToken },
         body:JSON.stringify({shareName:props.name})

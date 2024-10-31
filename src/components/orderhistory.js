@@ -16,7 +16,7 @@ export default function Transiction(props) {
     useEffect(() => {
         document.body.style.overflow='auto'
         const fetchdata = async () => {
-            const data = await fetch('https://stockmarketbackend-3.onrender.com/userdetail/getdetail', {
+            const data = await fetch('https://stockmarketbackend-4.onrender.com/userdetail/getdetail', {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json', 'auth-token': a.jwtToken }
             });

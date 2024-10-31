@@ -18,7 +18,7 @@ export default function Sign() {
 //LOGIN PAGE API:-
     const loginData=async ()=>{
       const {email,pass}=datalogin
-      const response=await fetch('https://stockmarketbackend-3.onrender.com/login',{
+      const response=await fetch('https://stockmarketbackend-4.onrender.com/login',{
           method:'POST',
           headers:{'Content-Type':'application/json'},
           body:JSON.stringify({email,pass})
@@ -67,7 +67,7 @@ export default function Sign() {
   //SIGNUP PAGE API:-
     const submitData = async () => {
         const { name, email, pass, age,phone } = data
-        const response = await fetch('https://stockmarketbackend-3.onrender.com/signup', {
+        const response = await fetch('https://stockmarketbackend-4.onrender.com/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email, pass, age ,phone})

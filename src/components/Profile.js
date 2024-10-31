@@ -11,7 +11,7 @@ const[jsonn,setjson]=useState({name:"",age:"",email:"",phone:"",date:""})
 document.body.style.overflow='auto'
       document.body.style.backgroundColor='#E91E63'
         const submitData = async () => {
-            const response = await fetch('https://stockmarketbackend-3.onrender.com/userdetail', {
+            const response = await fetch('https://stockmarketbackend-4.onrender.com/userdetail', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json','auth-token':a.jwtToken},
                 
